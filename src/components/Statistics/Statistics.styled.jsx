@@ -8,6 +8,9 @@ export const StatisticsBox = styled.div`
 `;
 
 export const StatisticsList = styled.ul`
+  display: flex;
+  width: 272px;
+  flex-direction: column;
   margin-bottom: 24px;
 `;
 export const StatisticsItem = styled.li`
@@ -31,5 +34,12 @@ export const Percentage = styled.p`
 export const Value = styled.span`
   color: ${theme.colors.accent};
   font-size: ${theme.fontSizes.large};
+  margin-left: 12px;
+`;
+
+export const Message = styled.p`
+  color: ${theme.colors.accent};
+  font-size: ${theme.fontSizes.large};
+  font-weight: 500;
   margin-left: 12px;
 `;

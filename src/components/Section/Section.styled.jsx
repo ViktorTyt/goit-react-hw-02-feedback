@@ -6,9 +6,10 @@ export const SectionWrapper = styled.div`
   flex-direction: column;
   justifycontent: center;
   align-items: center;
-  margin-bottom: 24px;
+  margin-top: 24px;
 `;
 export const Title = styled.h2`
   font-size: 40px;
   color: ${theme.colors.light};
+  text-align: center;
 `;

@@ -7,7 +7,6 @@ export const ButtonBox = styled.div`
 `;
 
 export const Button = styled.button`
-  margin-right: 24px;
   font-size: 16px;
   font-weight: 700;
   text-transform: capitalize;
@@ -20,6 +19,9 @@ export const Button = styled.button`
   scale: 1;
   transform: scale;
 
+  :not(:last-child) {
+    margin-right: 24px;
+  }
   :hover,
   :focus {
     background-color: blue;

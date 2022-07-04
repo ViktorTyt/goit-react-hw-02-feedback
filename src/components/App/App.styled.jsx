@@ -7,5 +7,6 @@ export const Container = styled.div`
   alignitems: center;
   fontsize: 40;
   color: #010101;
-  padding: 60px 0;
+  padding: 0 24px;
+  margin: 0 auto;
 `;
