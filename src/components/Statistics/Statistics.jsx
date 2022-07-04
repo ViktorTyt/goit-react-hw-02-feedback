@@ -1,23 +1,37 @@
 // import PropTypes from 'prop-types';
 import { Component } from 'react';
+import {
+  StatisticsBox,
+  StatisticsList,
+  StatisticsItem,
+  Total,
+  Percentage,
+  Value,
+} from './Statistics.styled';
 
 export class Statistics extends Component {
   render() {
+    const { good, neutral, bad, total, positivePercentage } = this.props.props;
     return (
-      <div>
-        <ul>
-          <li>Good: {this.props.good}</li>
-          <li>Neutral: {this.props.neutral} </li>
-          <li>Bad: {this.props.bad} </li>
-        </ul>
-        <p>Total: {this.props.countTotalFeedback()}</p>
-        <p>
-          Positive feedback: {''}
-          {this.props.countTotalFeedback() &&
-            this.props.countPositiveFeedbackPercentage()}
-          %
-        </p>
-      </div>
+      <StatisticsBox>
+        <StatisticsList>
+          <StatisticsItem>
+            Good: <Value>{good}</Value>
+          </StatisticsItem>
+          <StatisticsItem>
+            Neutral: <Value>{neutral}</Value>{' '}
+          </StatisticsItem>
+          <StatisticsItem>
+            Bad: <Value>{bad} </Value>
+          </StatisticsItem>
+        </StatisticsList>
+        <Total>
+          Total: <Value>{total()}</Value>
+        </Total>
+        <Percentage>
+          Positive feedback: <Value>{total() && positivePercentage()} %</Value>
+        </Percentage>
+      </StatisticsBox>
     );
   }
 }
