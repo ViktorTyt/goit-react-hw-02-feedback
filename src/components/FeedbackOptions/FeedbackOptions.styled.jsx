@@ -16,14 +16,11 @@ export const Button = styled.button`
   height: 50px;
   cursor: pointer;
   border-radius: 4px;
-  scale: 1;
-  transform: scale;
 
   :not(:last-child) {
     margin-right: 24px;
   }
-  :hover,
-  :focus {
+  :hover {
     background-color: blue;
     color: white;
   }

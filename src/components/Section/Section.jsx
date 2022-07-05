@@ -1,27 +1,57 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { Statistics } from 'components/Statistics/Statistics';
 import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions';
-import { Component } from 'react';
 import { SectionWrapper, Title } from './Section.styled';
 
-export class Section extends Component {
-  render() {
-    return (
-      <>
-        {this.props.title === 'Statistics' && (
-          <SectionWrapper>
-            <Title>{this.props.title}</Title>
-            <Statistics props={this.props} />
-          </SectionWrapper>
-        )}
+export const Section = ({
+  title,
+  good,
+  neutral,
+  bad,
+  options,
+  onLeaveFeedback,
+  total,
+  positivePercentage,
+}) => {
+  return (
+    <>
+      {title === 'Statistics' && (
+        <SectionWrapper>
+          <Title>{title}</Title>
+          <Statistics
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={total}
+            positivePercentage={positivePercentage}
+          />
+        </SectionWrapper>
+      )}
 
-        {this.props.title === 'Please leave feedback' && (
-          <SectionWrapper>
-            <Title>{this.props.title}</Title>
-            <FeedbackOptions props={this.props} />
-          </SectionWrapper>
-        )}
-      </>
-    );
-  }
-}
+      {title === 'Please leave feedback' && (
+        <SectionWrapper>
+          <Title>{title}</Title>
+          <FeedbackOptions
+            options={options}
+            onLeaveFeedback={onLeaveFeedback}
+          />
+        </SectionWrapper>
+      )}
+    </>
+  );
+};
+
+Section.propTypes = {
+  title: PropTypes.string.isRequired,
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  options: PropTypes.exact({
+    good: PropTypes.number.isRequired,
+    neutral: PropTypes.number.isRequired,
+    bad: PropTypes.number.isRequired,
+  }),
+  onLeaveFeedback: PropTypes.func,
+  total: PropTypes.func,
+  positivePercentage: PropTypes.func,
+};
