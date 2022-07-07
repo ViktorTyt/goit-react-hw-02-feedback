@@ -6,8 +6,8 @@ import {
   Total,
   Percentage,
   Value,
-  Message,
 } from './Statistics.styled';
+import { Notification } from 'components/Notification/Notification';
 
 export const Statistics = ({
   good,
@@ -15,6 +15,7 @@ export const Statistics = ({
   bad,
   total,
   positivePercentage,
+  message,
 }) => {
   return total() ? (
     <StatisticsBox>
@@ -37,7 +38,7 @@ export const Statistics = ({
       </Percentage>
     </StatisticsBox>
   ) : (
-    <Message>No feedback messages</Message>
+    <Notification message={'There is no feedback'} />
   );
 };
 

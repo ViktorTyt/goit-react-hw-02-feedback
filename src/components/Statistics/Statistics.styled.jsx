@@ -36,10 +36,3 @@ export const Value = styled.span`
   font-size: ${theme.fontSizes.large};
   margin-left: 12px;
 `;
-
-export const Message = styled.p`
-  color: ${theme.colors.accent};
-  font-size: ${theme.fontSizes.large};
-  font-weight: 500;
-  margin-left: 12px;
-`;

@@ -15,28 +15,31 @@ export const Section = ({
 }) => {
   return (
     <>
-      {title === 'Statistics' && (
-        <SectionWrapper>
-          <Title>{title}</Title>
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={total}
-            positivePercentage={positivePercentage}
-          />
-        </SectionWrapper>
-      )}
-
-      {title === 'Please leave feedback' && (
-        <SectionWrapper>
-          <Title>{title}</Title>
-          <FeedbackOptions
-            options={options}
-            onLeaveFeedback={onLeaveFeedback}
-          />
-        </SectionWrapper>
-      )}
+      <>
+        {title === 'Please leave feedback' && (
+          <SectionWrapper>
+            <Title>{title}</Title>
+            <FeedbackOptions
+              options={options}
+              onLeaveFeedback={onLeaveFeedback}
+            />
+          </SectionWrapper>
+        )}
+      </>
+      <>
+        {title === 'Statistics' && (
+          <SectionWrapper>
+            <Title>{title}</Title>
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={positivePercentage}
+            />
+          </SectionWrapper>
+        )}
+      </>
     </>
   );
 };

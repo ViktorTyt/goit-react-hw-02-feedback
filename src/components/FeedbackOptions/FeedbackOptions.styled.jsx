@@ -16,12 +16,18 @@ export const Button = styled.button`
   height: 50px;
   cursor: pointer;
   border-radius: 4px;
+  border: 2px solid ${theme.colors.dark};
+  transition: ${theme.animation.cubicBezierV1};
 
   :not(:last-child) {
     margin-right: 24px;
   }
   :hover {
-    background-color: blue;
+    background-color: ${theme.colors.darkOpange};
     color: white;
+  }
+
+  :active {
+    border: none;
   }
 `;
