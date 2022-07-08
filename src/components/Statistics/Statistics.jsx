@@ -15,7 +15,6 @@ export const Statistics = ({
   bad,
   total,
   positivePercentage,
-  message,
 }) => {
   return total() ? (
     <StatisticsBox>
@@ -24,7 +23,7 @@ export const Statistics = ({
           Good:<Value>{good}</Value>
         </StatisticsItem>
         <StatisticsItem>
-          Neutral:<Value>{neutral}</Value>{' '}
+          Neutral:<Value>{neutral}</Value>
         </StatisticsItem>
         <StatisticsItem>
           Bad:<Value>{bad} </Value>

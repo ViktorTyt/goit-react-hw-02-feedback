@@ -1,4 +1,6 @@
 import { Section } from 'components/Section/Section';
+import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions';
+import { Statistics } from 'components/Statistics/Statistics';
 import { Component } from 'react';
 import { Container } from './App.styled';
 
@@ -26,22 +28,22 @@ export class App extends Component {
   render() {
     return (
       <Container>
-        <Section
-          title={'Please leave feedback'}
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          options={this.state}
-          onLeaveFeedback={this.onChange}
-        />
-        <Section
-          title={'Statistics'}
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={this.countTotalFeedback}
-          positivePercentage={this.countPositiveFeedbackPercentage}
-        />
+        <Section title={'Please leave feedback'}>
+          <FeedbackOptions
+            options={this.state}
+            onLeaveFeedback={this.onChange}
+          />
+        </Section>
+        <Section title={'Statistics'}>
+          <Statistics
+            good={this.state.good}
+            neutral={this.state.neutral}
+            bad={this.state.bad}
+            options={this.state}
+            total={this.countTotalFeedback}
+            positivePercentage={this.countPositiveFeedbackPercentage}
+          />
+        </Section>
       </Container>
     );
   }
