@@ -36,9 +36,6 @@ export class App extends Component {
         </Section>
         <Section title={'Statistics'}>
           <Statistics
-            good={this.state.good}
-            neutral={this.state.neutral}
-            bad={this.state.bad}
             options={this.state}
             total={this.countTotalFeedback}
             positivePercentage={this.countPositiveFeedbackPercentage}

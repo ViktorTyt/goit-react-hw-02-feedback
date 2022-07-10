@@ -16,6 +16,7 @@ export const StatisticsList = styled.ul`
 export const StatisticsItem = styled.li`
   color: ${theme.colors.white};
   font-size: ${theme.fontSizes.medium};
+  text-transform: capitalize;
   font-weight: 500;
 `;
 
